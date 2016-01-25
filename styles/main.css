@@ -1,0 +1,41 @@
+h1 {margin:0;}
+
+
+h1 { margin-bottom:10px;}
+
+.header{
+  width:680px;
+  padding: 10px 25px;
+  margin:50px auto;
+ 
+  border:5px solid #EFEFDD;
+  background-color:grey;
+  text-align: center;
+  border-radius 10px;
+}
+.header h1{
+   color:#EFEFDD;
+   font-family: "Roboto",sans-serif;
+}
+
+
+html{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* backgrounds */
+.day { background-image: url('../images/torontoNoon.jpg'); }
+.sunset { background-image: url('../images/torontoSunset.jpg'); }
+.night { background-image: url('../images/torontoNight.jpg'); }
+.dawn {background-image: url("../images/torontoDawn.jpg");}
+.sunrise{background-image: url("../images/torontoSunrise.jpg");}
+
+
+.moonPhase{
+ color: #EFEFDD;
+
+  
+}

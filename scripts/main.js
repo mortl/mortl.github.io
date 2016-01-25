@@ -88,7 +88,7 @@ function updateBackground(debug) {
                
                 $("html").addClass("sunset");
             }
-            if (dusk <= currentTime && currentTime <= 0) {
+            if (currentTime >= dusk && currentTime <= 0) {
 
 
                 $("html").addClass("night");

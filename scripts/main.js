@@ -92,7 +92,7 @@ function updateBackground(debug) {
             }
             if (currentTime >= dusk || currentTime <= 0){
 
-                bodyTag.toggleClass.toggleClass("night");
+                bodyTag.toggleClass("night");
             }
 
 

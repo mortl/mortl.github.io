@@ -70,7 +70,7 @@ function updateBackground(debug) {
            
 
 
-            var currentTime = new Date().getHours();
+            var currentTime =  5;
             console.log(currentTime);
             
             if (0 <= currentTime && currentTime < morningStart) {

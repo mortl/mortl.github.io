@@ -18,11 +18,10 @@ h1 { margin-bottom:10px;}
   background-color:#78746C;
   text-align: center;
   border-radius: 10px;
-}
-.header h1{
    color:#BCBFBA;
    font-family: "Roboto",sans-serif;
 }
+
 
 
 html{
@@ -50,11 +49,6 @@ html{
 .sunrise{background-color:#FF8A5A;}
 
 
-.moonPhase{
- color: #BCBFBA;
-font-family: "Roboto",sans-serif;
-  
-}
 
 
 #clouds{

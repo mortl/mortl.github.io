@@ -27,11 +27,11 @@ html{
 }
 
 /* backgrounds */
-.day { background-image: url('../images/torontoNoon.jpg'); }
-.sunset { background-image: url('../images/torontoSunset.jpg'); }
-.night { background-image: url('../images/torontoNight.jpg'); }
-.dawn {background-image: url("../images/torontoDawn.jpg");}
-.sunrise{background-image: url("../images/torontoSunrise.jpg");}
+.day { background-color:red; }
+.sunset { background-color:green; }
+.night {background-color:orange; }
+.dawn {background-color:grey;}
+.sunrise{background-color:blue;}
 
 
 .moonPhase{

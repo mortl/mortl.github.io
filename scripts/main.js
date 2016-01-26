@@ -71,24 +71,27 @@ function updateBackground(debug) {
 
 
             var currentTime = new Date().getHours();
+            console.log(currentTime);
+            
             if (0 <= currentTime && currentTime < morningStart) {
-                $("html").addClass("dawn");
+                $("html").toggleClass("dawn sunset");
             }
             if (currentTime > morningStart  && currentTime < noon) {
                 console.log("morning start: " + morningStart);
                 console.log("currentTime: " + currentTime);
-                $("html").addClass('sunrise')
+                $("html").toggleClass("sunrise sunset")
             }
             if (noon <= currentTime && currentTime < sunset) {
-                $("html").addClass("day");
+                $("html").toggleClass("day sunset");
+
             }
             if (currentTime <= sunset && currentTime < dusk) {
                
-                $("html").addClass("sunset");
+                $("html").toggleClass("sunset");
             }
-            if (currentTime > dusk || currentTime <= 0){
+            if (currentTime >= dusk || currentTime <= 0){
 
-                $("html").addClass("night");
+                $("html").toggleClass("night");
             }
 
 

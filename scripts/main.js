@@ -74,7 +74,7 @@ function updateBackground(debug) {
             if (0 <= currentTime && currentTime < morningStart) {
                 $("html").addClass("dawn");
             }
-            if (morningStart < currentTime && currentTime < noon) {
+            if (currentTime > morningStart  && currentTime < noon) {
                 console.log("morning start: " + morningStart);
                 console.log("currentTime: " + currentTime);
                 $("html").addClass('sunrise')

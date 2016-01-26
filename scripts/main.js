@@ -69,29 +69,30 @@ function updateBackground(debug) {
             
            
 
-
-            var currentTime =  5;
+            var bodyTag = $("body");
+            var htmlTag = $("html");
+            var currentTime =  new Date().getHours();
             console.log(currentTime);
             
             if (0 <= currentTime && currentTime < morningStart) {
-                $("html").toggleClass("dawn sunset");
+                bodyTag.toggleClass("dawn sunset");
             }
             if (currentTime > morningStart  && currentTime < noon) {
                 console.log("morning start: " + morningStart);
                 console.log("currentTime: " + currentTime);
-                $("html").toggleClass("sunrise sunset")
+                bodyTag.toggleClass("sunrise sunset")
             }
             if (noon <= currentTime && currentTime < sunset) {
-                $("html").toggleClass("day sunset");
+                bodyTag.toggleClass("day sunset");
 
             }
             if (currentTime <= sunset && currentTime < dusk) {
                
-                $("html").toggleClass("sunset");
+                bodyTag.toggleClass("sunset");
             }
             if (currentTime >= dusk || currentTime <= 0){
 
-                $("html").toggleClass("night");
+                bodyTag.toggleClass.toggleClass("night");
             }
 
 

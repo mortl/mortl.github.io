@@ -27,11 +27,11 @@ html{
 }
 
 /* backgrounds */
-.day { background-color:red; }
-.sunset { background-color:green; }
+.day { background-color:#6CC1D6; }
+.sunset { background-color:#FCCC2B; }
 .night {background-color:#0C172F; }
-.dawn {background-color:grey;}
-.sunrise{background-color:blue;}
+.dawn {background-color:#543263;}
+.sunrise{background-color:#FF8A5A;}
 
 
 .moonPhase{

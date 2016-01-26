@@ -14,13 +14,13 @@ h1 { margin-bottom:10px;}
   padding: 10px 25px;
   margin:50px auto;
  
-  border:5px solid #EFEFDD;
-  background-color:grey;
+  border:5px solid #26261D;
+  background-color:#78746C;
   text-align: center;
   border-radius: 10px;
 }
 .header h1{
-   color:#EFEFDD;
+   color:#BCBFBA;
    font-family: "Roboto",sans-serif;
 }
 

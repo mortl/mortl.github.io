@@ -34,7 +34,16 @@ function updateBackground(debug) {
             //Get the nightTwilight object to retreive data on various night hours.
             var nightInfo = times.nightTwilight;
 
-
+            var morningStart = morningInfo.astronomical.start.getHours();
+            var morningEnd = morningInfo.civil.end.getHours();
+            var noon = times.transit.getHours();
+            var sunriseStart = times.sunrise.start.getHours();
+            var sunriseEnd = times.sunrise.end.getHours();
+            var nightStart = nightInfo.astronomical.start.getHours();
+            
+            var sunset = times.sunset.end.getHours();
+            var dusk = times.dusk.getHours() + 1;
+           
 
             //display debugging information.
             if(debug == true){
@@ -57,19 +66,6 @@ function updateBackground(debug) {
             console.log("morningStart: " + morningStart);
             console.log("morning end " + morningEnd);
         }
-
-
-
-            var morningStart = morningInfo.astronomical.start.getHours();
-            var morningEnd = morningInfo.civil.end.getHours();
-            var noon = times.transit.getHours();
-            var sunriseStart = times.sunrise.start.getHours();
-            var sunriseEnd = times.sunrise.end.getHours();
-            var nightStart = nightInfo.astronomical.start.getHours();
-            
-            var sunset = times.sunset.end.getHours();
-            var dusk = times.dusk.getHours() + 1;
-           
             
            
 

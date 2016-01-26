@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var debug = false;
+    var debug = true;
 
 
     updateBackground(debug);
@@ -79,6 +79,8 @@ function updateBackground(debug) {
                 $("html").addClass("dawn");
             }
             if (morningStart <= currentTime && currentTime < noon) {
+                console.log("morning start: " + morningStart);
+                console.log("currentTime: " + currentTime);
                 $("html").addClass('sunrise')
             }
             if (noon <= currentTime && currentTime < sunset) {

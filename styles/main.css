@@ -29,7 +29,7 @@ html{
 /* backgrounds */
 .day { background-color:red; }
 .sunset { background-color:green; }
-.night {background-color:orange; }
+.night {background-color:#0C172F; }
 .dawn {background-color:grey;}
 .sunrise{background-color:blue;}
 

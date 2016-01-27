@@ -77,7 +77,7 @@ function updateBackground(debug,currentDate) {
 
             var cloudDiv = $("#cloudDiv");
             
-            var currentTime = 17;// currentDate.getHours();
+            var currentTime = currentDate.getHours();
             
             
             if (0 <= currentTime && currentTime < morningStart) {

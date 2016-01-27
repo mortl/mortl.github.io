@@ -18,8 +18,9 @@ h1 { margin-bottom:10px;}
   background-color:#78746C;
   text-align: center;
   border-radius: 10px;
-   color:#BCBFBA;
-   font-family: "Roboto",sans-serif;
+  color:#BCBFBA;
+  font-family: "Roboto",sans-serif;
+  z-index: 5;
 }
 
 
@@ -240,3 +241,5 @@ html{
   width: 100%; 
   }
 }
+
+

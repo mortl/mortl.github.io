@@ -1,10 +1,12 @@
 $(document).ready(function() {
 
     var debug = true;
+    var currTime = $(".currentTime");
+    var date = new Date();
 
-
-    updateBackground(debug);
-    displayMoonPhase();
+    currTime.append(formatTime(date,true));
+    updateBackground(debug,date);
+    displayMoonPhase(date);
 
 
 });
@@ -17,7 +19,7 @@ $(document).ready(function() {
 //-----------------------------------------------------//
 
 
-function updateBackground(debug) {
+function updateBackground(debug,currentDate) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(pos) {
 
@@ -26,7 +28,7 @@ function updateBackground(debug) {
             //This is the modified Suncalc which I found on Suncalc.net
             //I used this version to determine the times of the sun because it was better optimized then the original version.
 
-            var times = SunCalc2.getDayInfo(new Date(), crd.latitude, crd.longitude, true);
+            var times = SunCalc2.getDayInfo(currentDate, crd.latitude, crd.longitude, true);
 
             //Get the morningTwilight object to retrieve data on the various morning hours.
             var morningInfo = times.morningTwilight;
@@ -70,16 +72,15 @@ function updateBackground(debug) {
            
 
             var bodyTag = $("body");
-            var htmlTag = $("html");
-            var currentTime =  new Date().getHours();
-            console.log(currentTime);
+            
+            var currentTime =  currentDate.getHours();
+            
             
             if (0 <= currentTime && currentTime < morningStart) {
                 bodyTag.toggleClass("dawn sunset");
             }
             if (currentTime > morningStart  && currentTime < noon) {
-                console.log("morning start: " + morningStart);
-                console.log("currentTime: " + currentTime);
+                
                 bodyTag.toggleClass("sunrise sunset")
             }
             if (noon <= currentTime && currentTime < sunset) {
@@ -93,6 +94,7 @@ function updateBackground(debug) {
             if (currentTime >= dusk || currentTime <= 0){
 
                 bodyTag.toggleClass("night");
+                
             }
 
 
@@ -102,18 +104,13 @@ function updateBackground(debug) {
 
 }
 
-function displayMoonPhase() {
+function displayMoonPhase(currentDate) {
 
-    var moonInfo = SunCalc.getMoonIllumination(new Date());
+    var moonInfo = SunCalc.getMoonIllumination(currentDate);
     var moonPhase = moonInfo.phase;
     var moonText = findMoonPhase(moonPhase);
-
-    console.log("Current Moon Phase (as text): " + moonText);
-    //console.log("Test for above 0.26 :" + findMoonPhase(0.26));
-    //console.log("Test for above 0.40 :" + findMoonPhase(0.50));
-    //console.log("Test for above 0.75 :" + findMoonPhase(1.00));
-    console.log("Current Moon Phase:(between 0 - 1): " + moonPhase);
-    $('.moonPhase').html("Current moon phase: " + moonText);
+   
+    $('.moonPhase').append(moonText);
 }
 
 function findMoonPhase(moonPhs) {

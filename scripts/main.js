@@ -8,6 +8,7 @@ $(document).ready(function() {
     updateBackground(debug,date);
     displayMoonPhase(date);
 
+        
 
 });
 
@@ -44,7 +45,7 @@ function updateBackground(debug,currentDate) {
             var nightStart = nightInfo.astronomical.start.getHours();
             
             var sunset = times.sunset.end.getHours();
-            var dusk = times.dusk.getHours() + 1;
+            var dusk = times.dusk.getHours() + 2;
            
 
             //display debugging information.
@@ -72,28 +73,40 @@ function updateBackground(debug,currentDate) {
            
 
             var bodyTag = $("body");
+            var showStars =$("#showStars");
+
+            var cloudDiv = $("#cloudDiv");
             
-            var currentTime =  currentDate.getHours();
+            var currentTime = 17;// currentDate.getHours();
             
             
             if (0 <= currentTime && currentTime < morningStart) {
                 bodyTag.toggleClass("dawn sunset");
+                showStars.toggleClass("stars");
+                cloudDiv.toggleClass("clouds-night");
+
             }
             if (currentTime > morningStart  && currentTime < noon) {
                 
                 bodyTag.toggleClass("sunrise sunset")
+                cloudDiv.toggleClass("clouds-day");
             }
             if (noon <= currentTime && currentTime < sunset) {
                 bodyTag.toggleClass("day sunset");
+                cloudDiv.toggleClass("clouds-day");
 
             }
             if (currentTime <= sunset && currentTime < dusk) {
                
                 bodyTag.toggleClass("sunset");
+                cloudDiv.toggleClass("clouds-day");
+
             }
             if (currentTime >= dusk || currentTime <= 0){
 
                 bodyTag.toggleClass("night");
+                showStars.toggleClass("stars");
+                cloudDiv.toggleClass("clouds-night");
                 
             }
 

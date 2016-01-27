@@ -20,7 +20,7 @@ h1 { margin-bottom:10px;}
   border-radius: 10px;
   color:#BCBFBA;
   font-family: "Roboto",sans-serif;
-  z-index: 5;
+  
 }
 
 
@@ -36,135 +36,78 @@ html{
 .day { background-color:#6CC1D6; }
 
 
-.sunset { background-color:#FCCC2B; }
+.sunset { background-color:#FF8A5A; }
 
-.night {
+.night { background-color:#0C172F; }
 
-  background-color:#0C172F; 
+.dawn {background-color:#3B418A;}
+
+.sunrise{ background-color:#F2CE66;}
 
 
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
 }
-
-.dawn {background-color:#543263;}
-
-.sunrise{background-color:#FF8A5A;}
-
-
-
-
-#clouds{
-  padding: 100px 100px; 
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
 }
-
-.cloud {
-  width: 200px; height: 60px;
-  
-  border-radius: 200px;
-  -moz-border-radius: 200px;
-  -webkit-border-radius: 200px;
-  
-  position: relative; 
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
 }
-
-.cloud:before, .cloud:after {
-  content: '';
-  position: absolute; 
-  background: #fff;
-  width: 100px; height: 80px;
-  position: absolute; top: -15px; left: 10px;
-  
-  border-radius: 100px;
-  -moz-border-radius: 100px;
-  -webkit-border-radius: 100px;
-  
-  -webkit-transform: rotate(30deg);
-  transform: rotate(30deg);
-  -moz-transform: rotate(30deg);
-}
-
-.cloud:after {
-  width: 120px; height: 120px;
-  top: -55px; left: auto; right: 15px;
-}
-
-.x1 {
-  left: -250px;
-
-  -webkit-transform: scale(0.4);
-  -moz-transform: scale(0.4);
-  transform: scale(0.4);
-
-  -webkit-animation: moveclouds 120s linear infinite;
-  -moz-animation: moveclouds 120s linear infinite;
-  -o-animation: moveclouds 120s linear infinite;
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
 }
 
 
-.x2 {
-  right:70px; top:-100px;
-  
-  -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  transform: scale(0.5);
-  opacity: 0.7;   
 
-  -webkit-animation: moveclouds 140s linear infinite;
-  -moz-animation: moveclouds 140s linear infinite;
-  -o-animation: moveclouds 140s linear infinite;
+
+
+.stars,.clouds-night,.clouds-day {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
 }
-
-.x3 {
-  left: -550px; top: -200px;
-  
-  -webkit-transform: scale(0.4);
-  -moz-transform: scale(0.4);
-  transform: scale(0.4);
-  opacity: 0.8; 
-  
-  -webkit-animation: moveclouds 150s linear infinite;
-  -moz-animation: moveclouds 150s linear infinite;
-  -o-animation: moveclouds 150s linear infinite;
+.stars {
+  background:url(../images/stars.png) repeat top center;
+  z-index:-1;
 }
 
-.x4 {
-  left: 400px; top: -250px;
-  
-  -webkit-transform: scale(0.6);
-  -moz-transform: scale(0.6);
-  transform: scale(0.6);
-  opacity: 0.75;
-  
-  -webkit-animation: moveclouds 100s linear infinite;
-  -moz-animation: moveclouds 100s linear infinite;
-  -o-animation: moveclouds 100s linear infinite;
+.clouds-night{
+    background:transparent url(../images/clouds.png) repeat top center;
+    z-index:0;
+
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}
+.clouds-day{
+    background:transparent url(../images/clouds4.png) repeat top center;
+    z-index:0;
+
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
 }
 
-.x5 {
-  left: -750px; top: -250px;
-  
-  -webkit-transform: scale(0.47);
-  -moz-transform: scale(0.47);
-  transform: scale(0.47);
-  opacity: 0.8;
-  
-  -webkit-animation: moveclouds 110s linear infinite;
-  -moz-animation: moveclouds 110s linear infinite;
-  -o-animation: moveclouds 110s linear infinite;
-}
 
-@-webkit-keyframes moveclouds {
-  0% {margin-left: 1000px;}
-  100% {margin-left: -1000px;}
-}
-@-moz-keyframes moveclouds {
-  0% {margin-left: 1000px;}
-  100% {margin-left: -1000px;}
-}
-@-o-keyframes moveclouds {
-  0% {margin-left: 1000px;}
-  100% {margin-left: -1000px;}
-}
 
+
+
+/*      Basic Responsiveness.           */
 /*  SECTIONS  */
 .section {
   clear: both;
@@ -241,5 +184,7 @@ html{
   width: 100%; 
   }
 }
+
+
 
 

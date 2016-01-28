@@ -83,7 +83,7 @@ function updateBackground(debug,currentDate) {
             if (0 <= currentTime && currentTime < morningStart) {
                 bodyTag.toggleClass("dawn sunset");
                 showStars.addClass("stars");
-                cloudDiv.addClass("clouds-night");
+                cloudDiv.toggleClass("clouds-night");
 
             }
            
@@ -107,7 +107,7 @@ function updateBackground(debug,currentDate) {
 
                 bodyTag.toggleClass("night");
                 showStars.addClass("stars");
-                cloudDiv.addClass("clouds-night");
+                cloudDiv.toggleClass("clouds-night");
                 
             }
 

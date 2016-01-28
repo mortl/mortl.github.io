@@ -77,9 +77,8 @@ function updateBackground(debug,currentDate) {
 
             var cloudDiv = $("#cloudDiv");
             
-            var currentTime = 0;//currentDate.getHours();
+            var currentTime = currentDate.getHours();
             
-            //Night/Dawn 12am to 6am
             if (0 <= currentTime && currentTime < morningStart) {
                 bodyTag.toggleClass("dawn sunset");
                 showStars.addClass("stars");

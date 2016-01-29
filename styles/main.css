@@ -106,7 +106,7 @@ h2 {
 }
 
 .clouds-day {
-    background: transparent url(../images/clouds4.png) repeat top center;
+    background: transparent url(../images/clouds2.png) repeat top center;
     z-index: 0;
     -moz-animation: move-clouds-back 200s linear infinite;
     -ms-animation: move-clouds-back 200s linear infinite;

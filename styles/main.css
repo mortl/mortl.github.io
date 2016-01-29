@@ -96,7 +96,7 @@ h2 {
 }
 
 .clouds-night {
-    background: transparent url(../images/clouds2.png) repeat top center;
+    background: transparent url(../images/clouds.png) repeat top center;
     z-index: 0;
     -moz-animation: move-clouds-back 200s linear infinite;
     -ms-animation: move-clouds-back 200s linear infinite;

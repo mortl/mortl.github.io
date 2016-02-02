@@ -8,26 +8,23 @@ $(document).ready(function() {
     updateBackground(debug,date);
     displayMoonPhase(date);
 
-        
-
 });
-
-
-
-
-
 
 //-----------------------------------------------------//
 
 
 function updateBackground(debug,currentDate) {
+
+    //Check if the browser allows geolocation
+    //Then use the geolocation API to get the current position.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(pos) {
 
             var crd = pos.coords;
 
-            //This is the modified Suncalc which I found on Suncalc.net
-            //I used this version to determine the times of the sun because it was better optimized then the original version.
+            /*This is the modified Suncalc which I found on Suncalc.net
+            I used this version to determine the times of the sun 
+            because it was better optimized then the original version.*/
 
             var times = SunCalc2.getDayInfo(currentDate, crd.latitude, crd.longitude, true);
 
@@ -61,15 +58,14 @@ function updateBackground(debug,currentDate) {
             console.log("noon " + formatTime(times.transit, true));
             console.log("dusk " + formatTime(times.dusk,true));
 
-            console.log("Dusk: " + dusk);
-            console.log("Sunset : " + sunset);
-
+            
             console.log("sunrise start: " + sunriseStart);
             console.log("sunrise end " + sunriseEnd);
             console.log("night start " + nightStart);
             console.log("morningStart: " + morningStart);
             console.log("morning end " + morningEnd);
-        }
+
+            }
             
            
 
@@ -115,10 +111,13 @@ function updateBackground(debug,currentDate) {
 
 
 
-        });
-    }
+        }); // closing brace for function call.
+
+    } // closing brace for if statement
 
 }
+
+
 
 function displayMoonPhase(currentDate) {
 

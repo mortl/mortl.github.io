@@ -131,7 +131,7 @@ function displayMoonPhase(currentDate) {
 function findMoonPhase(moonPhs) {
     var moonPhStr = "";
     if (moonPhs == 0) {
-        moonPhs = "New Moon";
+        moonPhStr = "New Moon";
 
     } else if (moonPhs > 0 && moonPhs < 0.25) {
         moonPhStr = "Waxing Crescent";

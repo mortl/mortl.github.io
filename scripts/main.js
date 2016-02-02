@@ -46,6 +46,7 @@ function updateBackground(debug,currentDate) {
             
             var sunset = times.sunset.end.getHours();
             var dusk = times.dusk.getHours() + 2;
+            var midnight = 0;
            
 
             //display debugging information.
@@ -58,7 +59,7 @@ function updateBackground(debug,currentDate) {
             console.log("sunrise end " + formatTime(times.sunrise.end, true));
             console.log("dawn " + formatTime(times.dawn));
             console.log("noon " + formatTime(times.transit, true));
-            console.log("dusk " + formatTime(times.dusk));
+            console.log("dusk " + formatTime(times.dusk,true));
 
             console.log("Dusk: " + dusk);
             console.log("Sunset : " + sunset);
@@ -79,13 +80,14 @@ function updateBackground(debug,currentDate) {
             
             var currentTime = currentDate.getHours();
             
-            if (0 <= currentTime && currentTime < morningStart) {
-                bodyTag.toggleClass("dawn sunset");
+            
+            if (midnight <= currentTime && currentTime <= morningStart) {
+                bodyTag.addClass("dawn");
                 showStars.addClass("stars");
                 cloudDiv.addClass("clouds-night");
                 cloudDiv.removeClass("clouds-day");
+
             }
-           
             if (currentTime > morningStart  && currentTime < noon) {
                 
                 bodyTag.toggleClass("sunrise sunset")
@@ -96,13 +98,13 @@ function updateBackground(debug,currentDate) {
                 cloudDiv.addClass("clouds-day");
 
             }
-            if (currentTime <= sunset && currentTime < dusk) {
+            if (currentTime <= sunset || currentTime < dusk) {
                
                 bodyTag.toggleClass("sunset");
                 cloudDiv.addClass("clouds-day");
 
             }
-            if (currentTime >= dusk || currentTime <= 0){
+            if (currentTime >= dusk || currentTime <= midnight){
 
                 bodyTag.toggleClass("night");
                 showStars.addClass("stars");

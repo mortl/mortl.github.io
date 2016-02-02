@@ -21,6 +21,16 @@ h2 {
 
 /* backgrounds */
 
+/* backgrounds */
+
+.dawn {
+    background-color: #3B418A;
+}
+
+.sunrise {
+    background-color: #F2CE66;
+}
+
 .day {
     background-color: #6CC1D6;
 }
@@ -31,14 +41,6 @@ h2 {
 
 .night {
     background-color: #0C172F;
-}
-
-.dawn {
-    background-color: #3B418A;
-}
-
-.sunrise {
-    background-color: #F2CE66;
 }
 
 @keyframes move-clouds-back {

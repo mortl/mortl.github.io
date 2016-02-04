@@ -2,8 +2,8 @@ $(document).ready(function() {
 
     var debug = false;
     var date = new Date();
-    
-    updateBackground(debug,date);
+
+    updateBackground(debug, date);
     displayMoonPhase(date);
 
 });
@@ -11,42 +11,40 @@ $(document).ready(function() {
 //-----------------------------------------------------//
 
 
-function updateBackground(debug,currentDate) {
+function updateBackground(debug, currentDate) {
 
-    //Check if the browser allows geolocation
-    //Then use the geolocation API to get the current position.
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(pos) {
+    //Pull in the ip-api to retrieve the latitude and longitude of the current location of the user.
+    $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
+        latitude = data.lat;
+        longitude = data.lon;
 
-            var crd = pos.coords;
+        /*This is the modified Suncalc which I found on Suncalc.net
+                    I used this version to determine the times of the sun 
+                    because it was better optimized then the original version.*/
 
-            /*This is the modified Suncalc which I found on Suncalc.net
-            I used this version to determine the times of the sun 
-            because it was better optimized then the original version.*/
+        var times = SunCalc2.getDayInfo(currentDate, latitude, longitude, true);
 
-            var times = SunCalc2.getDayInfo(currentDate, crd.latitude, crd.longitude, true);
+        //Get the morningTwilight object to retrieve data on the various morning hours.
+        var morningInfo = times.morningTwilight;
 
-            //Get the morningTwilight object to retrieve data on the various morning hours.
-            var morningInfo = times.morningTwilight;
+        //Get the nightTwilight object to retreive data on various night hours.
+        var nightInfo = times.nightTwilight;
 
-            //Get the nightTwilight object to retreive data on various night hours.
-            var nightInfo = times.nightTwilight;
+        var morningStart = morningInfo.astronomical.start.getHours();
+        var morningEnd = morningInfo.civil.end.getHours();
+        var noon = times.transit.getHours();
+        var sunriseStart = times.sunrise.start.getHours();
+        var sunriseEnd = times.sunrise.end.getHours();
+        var nightStart = nightInfo.astronomical.start.getHours();
 
-            var morningStart = morningInfo.astronomical.start.getHours();
-            var morningEnd = morningInfo.civil.end.getHours();
-            var noon = times.transit.getHours();
-            var sunriseStart = times.sunrise.start.getHours();
-            var sunriseEnd = times.sunrise.end.getHours();
-            var nightStart = nightInfo.astronomical.start.getHours();
-            
-            var sunset = times.sunset.end.getHours();
-            var dusk = times.dusk.getHours() + 2;
-            var midnight = 0;
-           
+        var sunset = times.sunset.end.getHours();
+        var dusk = times.dusk.getHours() + 2;
+        var midnight = 0;
 
-            //display debugging information.
-            if(debug == true){
-        
+
+        //display debugging information.
+        if (debug == true) {
+
             console.log("times dusk " + formatTime(times.dusk, true));
             console.log("sunset start " + formatTime(times.sunset.start, true))
             console.log("sunset " + formatTime(times.sunset.end, true));
@@ -54,64 +52,60 @@ function updateBackground(debug,currentDate) {
             console.log("sunrise end " + formatTime(times.sunrise.end, true));
             console.log("dawn " + formatTime(times.dawn));
             console.log("noon " + formatTime(times.transit, true));
-            console.log("dusk " + formatTime(times.dusk,true));
+            console.log("dusk " + formatTime(times.dusk, true));
 
-            
+
             console.log("sunrise start: " + sunriseStart);
             console.log("sunrise end " + sunriseEnd);
             console.log("night start " + nightStart);
             console.log("morningStart: " + morningStart);
             console.log("morning end " + morningEnd);
 
-            }
-            
-           
-
-            var bodyTag = $("body");
-            var showStars =$("#showStars");
-
-            var cloudDiv = $("#cloudDiv");
-            
-            var currentTime = currentDate.getHours();
-            
-            
-            if (midnight <= currentTime && currentTime <= morningStart) {
-                bodyTag.addClass("dawn");
-                showStars.addClass("stars");
-                cloudDiv.addClass("clouds-night");
-                cloudDiv.removeClass("clouds-day");
-
-            }
-            if (currentTime > morningStart  && currentTime < noon) {
-                
-                bodyTag.toggleClass("sunrise sunset")
-                cloudDiv.addClass("clouds-day");
-            }
-            if (noon <= currentTime && currentTime < sunset) {
-                bodyTag.toggleClass("day sunset");
-                cloudDiv.addClass("clouds-day");
-
-            }
-            if (currentTime <= sunset || currentTime < dusk) {
-               
-                bodyTag.toggleClass("sunset");
-                cloudDiv.addClass("clouds-day");
-
-            }
-            if (currentTime >= dusk || currentTime <= midnight){
-
-                bodyTag.toggleClass("night");
-                showStars.addClass("stars");
-                cloudDiv.addClass("clouds-night");
-                cloudDiv.removeClass("clouds-day");
-                
-            }
+        }
 
 
 
-        }); // closing brace for function call.
+        var bodyTag = $("body");
+        var showStars = $("#showStars");
 
-    } // closing brace for if statement
+        var cloudDiv = $("#cloudDiv");
+
+        var currentTime = currentDate.getHours();
+
+
+        if (midnight <= currentTime && currentTime <= morningStart) {
+            bodyTag.addClass("dawn");
+            showStars.addClass("stars");
+            cloudDiv.addClass("clouds-night");
+            cloudDiv.removeClass("clouds-day");
+
+        }
+        if (currentTime > morningStart && currentTime < noon) {
+
+            bodyTag.toggleClass("sunrise sunset")
+            cloudDiv.addClass("clouds-day");
+        }
+        if (noon <= currentTime && currentTime < sunset) {
+            bodyTag.toggleClass("day sunset");
+            cloudDiv.addClass("clouds-day");
+
+        }
+        if (currentTime <= sunset || currentTime < dusk) {
+
+            bodyTag.toggleClass("sunset");
+            cloudDiv.addClass("clouds-day");
+
+        }
+        if (currentTime >= dusk || currentTime <= midnight) {
+
+            bodyTag.toggleClass("night");
+            showStars.addClass("stars");
+            cloudDiv.addClass("clouds-night");
+            cloudDiv.removeClass("clouds-day");
+
+        }
+
+    });
 
 }
 
@@ -122,7 +116,7 @@ function displayMoonPhase(currentDate) {
     var moonInfo = SunCalc.getMoonIllumination(currentDate);
     var moonPhase = moonInfo.phase;
     var moonText = findMoonPhase(moonPhase);
-   
+
     $('.moonPhase').append(moonText);
 }
 
@@ -147,6 +141,7 @@ function findMoonPhase(moonPhs) {
 
     return moonPhStr;
 }
+
 
 function formatTime(date, postfix) {
     if (isNaN(date)) {
@@ -173,6 +168,3 @@ function formatTime(date, postfix) {
 
     return hours + ':' + minutes + (postfix ? ' ' + ap : '');
 }
-
-
-

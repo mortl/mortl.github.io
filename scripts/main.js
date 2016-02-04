@@ -1,10 +1,8 @@
 $(document).ready(function() {
 
     var debug = false;
-    var currTime = $(".currentTime");
     var date = new Date();
-
-    currTime.append(formatTime(date,true));
+    
     updateBackground(debug,date);
     displayMoonPhase(date);
 

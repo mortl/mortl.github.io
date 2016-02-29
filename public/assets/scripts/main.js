@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-  var debug = true;
+  var debug = false;
   var date = new Date();
 
-  updateBackground(debug, date);
+  setTimeout(updateBackground(debug, date), 500);
   displayMoonPhase(date);
   getWeather();
 
@@ -62,7 +62,7 @@ function updateBackground(debug, currentDate) {
 
     var sunset = times.sunset.end.getHours();
     var dusk = times.dusk.getHours() + 2;
-    var midnight = 0;
+    var midnight = 24;
 
 
     //display debugging information.
@@ -95,59 +95,76 @@ function updateBackground(debug, currentDate) {
 
     var currentTime = currentDate.getHours();
 
-    if (currentTime <= noon || currentTime <= sunset) {
-      console.log("Current Time: " + currentTime);
+    if (noon > currentTime && currentTime <= sunset) {
+
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-        src: './assets/74wingold-day.png'
-      }))
-    } else {
-      $('#main-banner').prepend($('<img>', {
-        id: 'bgImg',
-        src: './assets/74wingold-night.png'
-      }))
+        src: './assets/images/74wingold-day.png'
+      }));
     }
 
-    if (midnight <= currentTime && currentTime <= morningStart) {
-      bodyTag.toggleClass("dawn sunset");
+    if (noon <= currentTime && currentTime < sunset) {
 
+      $('#main-banner').prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/images/74wingold-day.png'
+      }));
+
+    }
+    if (0 <= currentTime && currentTime < morningStart) {
+      $('#main-banner').prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/images/74wingold-night.png'
+      }));
+    }
+
+    if (sunset <= currentTime && currentTime < dusk) {
+
+      $('#main-banner').prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/images/74wingold-day.png'
+      }));
+
+    }
+    if (dusk <= currentTime && currentTime <= midnight) {
+      $('#main-banner').prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/images/74wingold-night.png'
+      }));
+    }
+
+
+    //Check what the current time is and change background color.
+
+    if (0 <= currentTime && currentTime < morningStart) {
+      bodyTag.toggleClass("dawn");
       showStars.addClass("stars");
-      cloudDiv.addClass("clouds-night");
-      cloudDiv.removeClass("clouds-day");
-
+      cloudDiv.toggleClass("clouds-night");
 
 
     }
-    if (currentTime > morningStart && currentTime < noon) {
+    if (morningStart <= currentTime && currentTime < noon) {
 
-
-      bodyTag.toggleClass("sunrise sunset")
-
+      bodyTag.toggleClass("sunrise")
       cloudDiv.addClass("clouds-day");
     }
     if (noon <= currentTime && currentTime < sunset) {
-
-      bodyTag.toggleClass("day sunset");
-
+      bodyTag.toggleClass("day ");
       cloudDiv.addClass("clouds-day");
 
-
     }
-    if (currentTime <= sunset || currentTime < dusk) {
+    if (sunset <= currentTime && currentTime < dusk) {
 
       bodyTag.toggleClass("sunset");
-
       cloudDiv.addClass("clouds-day");
 
     }
-    if (currentTime >= dusk || currentTime <= midnight) {
+    if (dusk <= currentTime && currentTime <= midnight) {
 
       bodyTag.toggleClass("night");
-
       showStars.addClass("stars");
       cloudDiv.addClass("clouds-night");
-
       cloudDiv.removeClass("clouds-day");
 
     }

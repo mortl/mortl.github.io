@@ -62,7 +62,7 @@ function updateBackground(debug, currentDate) {
 
     var sunset = times.sunset.end.getHours();
     var dusk = times.dusk.getHours() + 2;
-    var midnight = 0;
+    var midnight = 24;
 
 
     //display debugging information.
@@ -109,45 +109,34 @@ function updateBackground(debug, currentDate) {
       }));
     }
 
-    if (midnight <= currentTime && currentTime <= morningStart) {
-      bodyTag.toggleClass("dawn sunset");
-
+    if (0 <= currentTime && currentTime < morningStart) {
+      bodyTag.toggleClass("dawn");
       showStars.addClass("stars");
-      cloudDiv.addClass("clouds-night");
-      cloudDiv.removeClass("clouds-day");
-
+      cloudDiv.toggleClass("clouds-night");
 
 
     }
-    if (currentTime > morningStart && currentTime < noon) {
+    if (morningStart <= currentTime && currentTime < noon) {
 
-
-      bodyTag.toggleClass("sunrise sunset");
-
+      bodyTag.toggleClass("sunrise")
       cloudDiv.addClass("clouds-day");
     }
     if (noon <= currentTime && currentTime < sunset) {
-
-      bodyTag.toggleClass("day sunset");
-
+      bodyTag.toggleClass("day ");
       cloudDiv.addClass("clouds-day");
 
-
     }
-    if (currentTime <= sunset || currentTime < dusk) {
+    if (sunset <= currentTime && currentTime < dusk) {
 
       bodyTag.toggleClass("sunset");
-
       cloudDiv.addClass("clouds-day");
 
     }
-    if (currentTime >= dusk || currentTime <= midnight) {
+    if (dusk <= currentTime && currentTime <= midnight) {
 
       bodyTag.toggleClass("night");
-
       showStars.addClass("stars");
       cloudDiv.addClass("clouds-night");
-
       cloudDiv.removeClass("clouds-day");
 
     }

@@ -3,7 +3,7 @@ $(document).ready(function() {
   var debug = true;
   var date = new Date();
 
-  updateBackground(debug, date);
+  var t = setTimeout(updateBackground(debug, date), 1000);
   displayMoonPhase(date);
   //getWeather();
 

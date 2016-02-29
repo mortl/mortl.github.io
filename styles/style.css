@@ -185,7 +185,7 @@ img:after {
 }
 
 .clouds-day {
-  background: transparent url(../assets/clouds4.png) repeat top center;
+  background: transparent url(../assets/clouds_headertag.png) repeat top center;
   z-index: -1;
   -moz-animation: move-clouds-back 200s linear infinite;
   -ms-animation: move-clouds-back 200s linear infinite;
@@ -201,6 +201,7 @@ img:after {
     font-size: 20px;
     line-height: 40px;
   }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -222,9 +223,33 @@ img:after {
     color: #eff1ef;
     line-height: 60px;
   }
+
+  .clouds-night {
+    background: transparent url(../assets/clouds-sm.png) repeat top center;
+    z-index: -1;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+  }
+
+  .clouds-day {
+    background: transparent url(../assets/clouds_headertag-md.png) repeat top center;
+    z-index: -1;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+
+  }
+
+
+
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 430px) {
   h1 {
     padding: 2px;
     margin: 0;
@@ -232,4 +257,25 @@ img:after {
     color: #eff1ef;
     line-height: 60px;
   }
+
+  .clouds-night {
+    background: transparent url(../assets/clouds-sm.png) repeat top center;
+    z-index: -1;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+  }
+
+  .clouds-day {
+    background: transparent url(../assets/clouds_headertag-sm.png) repeat top center;
+    z-index: -1;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+  }
+
 }

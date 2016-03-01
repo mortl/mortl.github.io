@@ -94,13 +94,12 @@ function updateBackground(debug, currentDate) {
     var cloudDiv = $("#cloudDiv");
 
     var currentTime = currentDate.getHours();
-
-    if (noon > currentTime && currentTime <= sunset) {
+if (noon > currentTime && currentTime <= sunset) {
 
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-        src: './assets/images/74wingold-day.png'
+        src: './public/assets/images/74wingold-day.png'
       }));
     }
 
@@ -108,14 +107,14 @@ function updateBackground(debug, currentDate) {
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-        src: './assets/images/74wingold-day.png'
+        src: './public/assets/images/74wingold-day.png'
       }));
 
     }
     if (0 <= currentTime && currentTime < morningStart) {
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-        src: './assets/images/74wingold-night.png'
+        src: './public/assets/images/74wingold-night.png'
       }));
     }
 
@@ -123,14 +122,14 @@ function updateBackground(debug, currentDate) {
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-        src: './assets/images/74wingold-day.png'
+        src: './public/assets/images/74wingold-day.png'
       }));
 
     }
     if (dusk <= currentTime && currentTime <= midnight) {
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-        src: './assets/images/74wingold-night.png'
+        src: './public/assets/images/74wingold-night.png'
       }));
     }
 

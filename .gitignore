@@ -3,8 +3,7 @@
 *
 
 #but these files
-!index.html
-!/assets/*
+!public/*
 !.gitignore
 
 

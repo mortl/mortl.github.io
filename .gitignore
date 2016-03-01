@@ -4,7 +4,7 @@
 
 #but these files
 !public/*
-!public/assets/*
+!public/assets/**/*
 !.gitignore
 
 

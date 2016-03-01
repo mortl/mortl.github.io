@@ -93,21 +93,21 @@ function updateBackground(debug, currentDate) {
     var imgTag = $("#bgImg");
     var cloudDiv = $("#cloudDiv");
 
-    var currentTime = currentDate.getHours();
+    var currentTime = //currentDate.getHours();
 
-    if (currentTime <= noon || currentTime <= sunset) {
-      console.log("Current Time: " + currentTime);
+      if (currentTime <= noon || currentTime <= sunset) {
+        console.log("Current Time: " + currentTime);
 
-      $('#main-banner').prepend($('<img>', {
-        id: 'bgImg',
-        src: './assets/images/74wingold-day.png'
-      }));
-    } else {
-      $('#main-banner').prepend($('<img>', {
-        id: 'bgImg',
-        src: './assets/images74wingold-night.png'
-      }));
-    }
+        $('#main-banner').prepend($('<img>', {
+          id: 'bgImg',
+          src: './assets/images/74wingold-day.png'
+        }));
+      } else {
+        $('#main-banner').prepend($('<img>', {
+          id: 'bgImg',
+          src: './assets/images74wingold-night.png'
+        }));
+      }
 
     if (0 <= currentTime && currentTime < morningStart) {
       bodyTag.toggleClass("dawn");

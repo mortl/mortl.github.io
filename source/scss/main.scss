@@ -1,0 +1,263 @@
+@import 'partials/variables';
+@import 'partials/base';
+
+
+
+
+.pink-main {
+  background: $ht-red;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.pink-main:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.header {
+  text-align: center;
+  color: $grey-blue;
+  padding-top: 50px;
+  margin: 0 auto;
+}
+
+
+
+.wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: $black;
+}
+
+.wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#main-banner {
+  width: 100%;
+  max-width: 1200;
+}
+
+
+
+.service h3,
+.service p {
+  padding: 10px;
+  text-align: center;
+}
+
+.service h3 {
+  background: $ht-red;
+}
+
+.service p {
+  color: $white;
+}
+
+.service {
+  float: left;
+  width: 29%;
+  margin: 1%;
+  padding: 1%;
+  height: 140px;
+
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/* backgrounds */
+.dawn {
+  background-color: $dawn;
+}
+
+.sunrise {
+  background-color: $sunrise;
+}
+
+.day {
+  background-color: $day;
+}
+
+.sunset {
+  background-color: $sunset;
+}
+
+.night {
+  background-color: $night;
+}
+
+/* Cloud and Stars*/
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0px;
+  }
+
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@-webkit-keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@-moz-keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@-ms-keyframes move-clouds-back {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+.stars,
+.clouds-night,
+.clouds-day {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: url(../images/stars.png) repeat top center;
+  z-index: -1;
+}
+
+.clouds-night {
+  background: transparent url(../images/clouds.png) repeat top center;
+  z-index: -1;
+  -moz-animation: move-clouds-back 200s linear infinite;
+  -ms-animation: move-clouds-back 200s linear infinite;
+  -o-animation: move-clouds-back 200s linear infinite;
+  -webkit-animation: move-clouds-back 200s linear infinite;
+  animation: move-clouds-back 200s linear infinite;
+}
+
+.clouds-day {
+  background: transparent url(../images/clouds_headertag.png) repeat top center;
+  z-index: -1;
+  -moz-animation: move-clouds-back 200s linear infinite;
+  -ms-animation: move-clouds-back 200s linear infinite;
+  -o-animation: move-clouds-back 200s linear infinite;
+  -webkit-animation: move-clouds-back 200s linear infinite;
+  animation: move-clouds-back 200s linear infinite;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 960px) {
+  h2 {
+    width: 20%;
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .service {
+    width: 80%;
+    margin: 10px 10% !important;
+    padding: 1%;
+    height: 140px;
+  }
+
+  .service h3,
+  .service p {
+    text-align: center;
+  }
+
+  h1 {
+    padding: 2px;
+    margin: 0;
+    color: $white;
+    line-height: 60px;
+  }
+
+  .clouds-night {
+    background: transparent url(../images/clouds-sm.png) repeat top center;
+    z-index: -1;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+  }
+
+  .clouds-day {
+    background: transparent url(../images/clouds_headertag-md.png) repeat top center;
+    z-index: -1;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+
+  }
+
+
+
+}
+
+@media screen and (max-width: 430px) {
+  h1 {
+    padding: 2px;
+    margin: 0;
+    font-size: 25px;
+    color: $white;
+    line-height: 60px;
+  }
+
+  .clouds-night {
+    background: transparent url(../images/clouds-sm.png) repeat top center;
+    z-index: -1;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+  }
+
+  .clouds-day {
+    background: transparent url(../images/clouds_headertag-sm.png) repeat top center;
+    z-index: -1;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+  }
+
+}

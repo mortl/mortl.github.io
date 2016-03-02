@@ -1,0 +1,39 @@
+{
+  "name": "mortl.github.io",
+  "version": "1.0.0",
+  "description": "Headertag new website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortl/mortl.github.io.git"
+  },
+  "keywords": [
+    "headertag"
+  ],
+  "author": "Martin Benes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mortl/mortl.github.io/issues"
+  },
+  "homepage": "https://github.com/mortl/mortl.github.io#readme",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0"
+  },
+  "dependencies": {
+    "normalize.css": "^3.0.3"
+  }
+}

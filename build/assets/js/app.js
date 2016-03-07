@@ -3,11 +3,14 @@ $(document).ready(function() {
   var debug = false;
   var date = new Date();
 
-  setTimeout(updateBackground(debug, date), 500);
+  setInterval(updateBackground(debug, date), 1000);
+ 
   displayMoonPhase(date);
   getWeather();
 
-
+ 
+               
+           
 });
 
 //-----------------------------------------------------//

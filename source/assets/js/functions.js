@@ -3,11 +3,14 @@ $(document).ready(function() {
   var debug = false;
   var date = new Date();
 
-  setTimeout(updateBackground(debug, date), 500);
+  setInterval(updateBackground(debug, date), 1000);
+ 
   displayMoonPhase(date);
   getWeather();
 
-
+ 
+               
+           
 });
 
 //-----------------------------------------------------//
@@ -94,23 +97,14 @@ function updateBackground(debug, currentDate) {
     var imgTag = $("#bgImg");
     var cloudDiv = $("#cloudDiv");
 
-<<<<<<< HEAD:public/assets/scripts/main.js
-    var currentTime = currentDate.getHours();
-if (noon > currentTime && currentTime <= sunset) {
-=======
     var currentTime =  currentDate.getHours();
 
     if (noon > currentTime && currentTime <= sunset) {
->>>>>>> gulpbuild:source/assets/js/functions.js
 
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-<<<<<<< HEAD:public/assets/scripts/main.js
-        src: './public/assets/images/74wingold-day.png'
-=======
         src: './assets/img/'+dayAssets[0]
->>>>>>> gulpbuild:source/assets/js/functions.js
       }));
     }
 
@@ -118,22 +112,14 @@ if (noon > currentTime && currentTime <= sunset) {
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-<<<<<<< HEAD:public/assets/scripts/main.js
-        src: './public/assets/images/74wingold-day.png'
-=======
         src: './assets/img/74wingold-day.png'
->>>>>>> gulpbuild:source/assets/js/functions.js
       }));
 
     }
     if (0 <= currentTime && currentTime < morningStart) {
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-<<<<<<< HEAD:public/assets/scripts/main.js
-        src: './public/assets/images/74wingold-night.png'
-=======
         src: './assets/img/74wingold-night.png'
->>>>>>> gulpbuild:source/assets/js/functions.js
       }));
     }
 
@@ -141,22 +127,14 @@ if (noon > currentTime && currentTime <= sunset) {
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-<<<<<<< HEAD:public/assets/scripts/main.js
-        src: './public/assets/images/74wingold-day.png'
-=======
         src: './assets/img/74wingold-day.png'
->>>>>>> gulpbuild:source/assets/js/functions.js
       }));
 
     }
     if (dusk <= currentTime && currentTime <= midnight) {
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-<<<<<<< HEAD:public/assets/scripts/main.js
-        src: './public/assets/images/74wingold-night.png'
-=======
         src: './assets/img/74wingold-night.png'
->>>>>>> gulpbuild:source/assets/js/functions.js
       }));
     }
 

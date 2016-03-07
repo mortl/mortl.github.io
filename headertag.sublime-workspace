@@ -1,0 +1,278 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"erro",
+				"errorMsg"
+			],
+			[
+				"fil",
+				"filter	.filter()"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"last_filter": "LiveReload: Enable/disable plugins",
+		"selected_items":
+		[
+			[
+				"LiveReload: Enable/disable plugins",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"restart",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"GOO",
+				"Google Spell Check"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/martin.benes/Workspace/headertag-rte"
+	],
+	"file_history":
+	[
+		"/Users/martin.benes/Workspace/new-project/source/views/index.html",
+		"/Users/martin.benes/Workspace/new-project/build/index.html",
+		"/Users/martin.benes/mortl.github.io/public/assets/images/74wingold-day.png",
+		"/Users/martin.benes/mortl.github.io/public/assets/images/74wingold-night.png",
+		"/Users/martin.benes/mortl.github.io/public/assets/images/cloud-1.png",
+		"/Users/martin.benes/mortl.github.io/public/assets/images/clouds_headertag-md.png",
+		"/Users/martin.benes/mortl.github.io/public/assets/images/clouds_headertag-sm.png",
+		"/Users/martin.benes/mortl.github.io/public/assets/images/clouds_headertag.png",
+		"/Users/martin.benes/mortl.github.io/public/assets/images/clouds-sm.png",
+		"/Users/martin.benes/mortl.github.io/public/assets/images/clouds.png",
+		"/Users/martin.benes/mortl.github.io/public/assets/images/stars.png",
+		"/Users/martin.benes/Workspace/new-project/source/assets/js/functions.js",
+		"/Users/martin.benes/Workspace/new-project/bower.json",
+		"/Users/martin.benes/Workspace/new-project/source/sass/1-tools/_vars.scss",
+		"/Users/martin.benes/Workspace/new-project/source/sass/4-pages/_page-home.scss",
+		"/Users/martin.benes/Workspace/new-project/source/sass/2-basics/_classes.scss",
+		"/Users/martin.benes/Workspace/new-project/source/sass/main.scss",
+		"/Users/martin.benes/Workspace/new-project/build/assets/js/suncalc.js",
+		"/Users/martin.benes/Workspace/VueApp/gulpfile.js",
+		"/Users/martin.benes/Workspace/VueApp/build/assets/js/app.js",
+		"/Users/martin.benes/Workspace/VueApp/source/sass/2-basics/_body-element.scss",
+		"/Users/martin.benes/Workspace/testing/positioning/webpack.config.js",
+		"/Users/martin.benes/Workspace/TashaSite/landing-page/contact-me.php",
+		"/Users/martin.benes/Workspace/TakanaTest/index.html",
+		"/Users/martin.benes/Workspace/TakanaTest/style.scss",
+		"/Users/martin.benes/Desktop/gw.js",
+		"/Users/martin.benes/Downloads/Interactive-banner-with-parallax.js-master/Interactive banner with parallax.js/css/style.css",
+		"/Users/martin.benes/Workspace/VueApp/source/sass/4-pages/page-home.scss",
+		"/Users/martin.benes/Workspace/VueApp/source/sass/1-tools/_vars.scss",
+		"/Users/martin.benes/Library/Application Support/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
+		"/Users/martin.benes/Library/Application Support/Sublime Text 3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/Users/martin.benes/Workspace/VueApp/source/sass/main.scss",
+		"/Users/martin.benes/Workspace/VueApp/source/sass/1-tools/_fonts.scss",
+		"/Users/martin.benes/Workspace/VueApp/source/assets/js/functions.js",
+		"/Users/martin.benes/Workspace/VueApp/source/views/index.html",
+		"/Users/martin.benes/Workspace/VueApp/node_modules/lodash/function.js",
+		"/Users/martin.benes/Workspace/VueApp/source/sass/2-basics/_selection-colors.scss",
+		"/Users/martin.benes/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/martin.benes/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/martin.benes/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/martin.benes/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/Users/martin.benes/Library/Application Support/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
+		"/Users/martin.benes/Library/Application Support/Sublime Text 3/Installed Packages/Theme - Piatto.sublime-package",
+		"/Users/martin.benes/Desktop/logo-index.png",
+		"/Users/martin.benes/Documents/Development/IndexExchangeRebrand2016/script.js"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"googletag",
+			"gravity_wave_date",
+			"gravity_wave_enabled",
+			"sidebar"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "headertag.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"scripts",
+				"js/script.js"
+			],
+			[
+				"mo",
+				"js/module2.js"
+			],
+			[
+				"views/in",
+				"source/views/index.html"
+			],
+			[
+				"index.html",
+				"source/views/index.html"
+			],
+			[
+				"function",
+				"source/assets/js/functions.js"
+			],
+			[
+				"functi",
+				"node_modules/lodash/function.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 275.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

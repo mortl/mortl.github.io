@@ -6,6 +6,13 @@
 
 }
 
+.container {
+  width:100%;
+  text-align: center;
+  padding:0;
+  margin:0;
+}
+
 .pink-main:after {
   content: '';
   display: block;
@@ -49,6 +56,9 @@
 
 .service h3 {
   background: $ht-red;
+  font-weight: bold;
+  color:$black;
+  font-size:19px;
 }
 
 .service p {

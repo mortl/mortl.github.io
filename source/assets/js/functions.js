@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
-  var debug = false;
+  var debug = true;
   var date = new Date();
 
-  setInterval(updateBackground(debug, date), 1000);
+  setInterval(updateBackground(debug, date), 100);
  
-  displayMoonPhase(date);
+  //displayMoonPhase(date);
   getWeather();
 
  
@@ -58,34 +58,35 @@ function updateBackground(debug, currentDate) {
 
     var morningStart = morningInfo.astronomical.start.getHours();
     var morningEnd = morningInfo.civil.end.getHours();
-    var noon = times.transit.getHours();
-    var sunriseStart = times.sunrise.start.getHours();
-    var sunriseEnd = times.sunrise.end.getHours();
-    var nightStart = nightInfo.astronomical.start.getHours();
 
-    var sunset = times.sunset.end.getHours();
-    var dusk = times.dusk.getHours() + 2;
-    var midnight = 24;
+    var noon =  epochTime(times.transit.getTime());
+    var sunriseStart =  times.sunrise.start.getTime();
+    var sunriseEnd = times.sunrise.end.getTime();
+    var nightStart = nightInfo.astronomical.start.getTime();
 
+    var sunset = epochTime(times.sunset.end.getTime());
+    var dusk = epochTime(times.dusk.getTime());
+    var midnight = epochTime(nightInfo.astronomical.end.getTime());
+    midnight = midnight + 14636;
+    log("Midnight " +  midnight);
 
     //display debugging information.
     if (debug === true) {
 
-      console.log("times dusk " + formatTime(times.dusk, true));
-      console.log("sunset start " + formatTime(times.sunset.start, true));
-      console.log("sunset " + formatTime(times.sunset.end, true));
-      console.log("sunrise " + formatTime(times.sunrise.start, true));
-      console.log("sunrise end " + formatTime(times.sunrise.end, true));
-      console.log("dawn " + formatTime(times.dawn));
-      console.log("noon " + formatTime(times.transit, true));
-      console.log("dusk " + formatTime(times.dusk, true));
+      log("times dusk " + epochTime(times.dusk.getTime()));
+      log("times sunset start " + epochTime(times.sunset.start.getTime()));
+      log("times sunset end " + epochTime(times.sunset.end.getTime()));
+      log("times sunrise start " + epochTime(times.sunrise.start.getTime()));
+      log("times sunrise end " + epochTime(times.sunrise.end.getTime()));
+      log("times dawn " + epochTime(times.dawn.getTime()));
+      log("times noon " + epochTime(times.transit.getTime()));
+      log("night start " + epochTime(nightStart));      
 
-
-      console.log("sunrise start: " + sunriseStart);
-      console.log("sunrise end " + sunriseEnd);
-      console.log("night start " + nightStart);
-      console.log("morningStart: " + morningStart);
-      console.log("morning end " + morningEnd);
+      log("morning start " + epochTime(morningInfo.astronomical.start.getTime()));
+      log("morning end " + epochTime(morningInfo.civil.end.getTime()));
+      
+     
+      
 
     }
 
@@ -97,10 +98,17 @@ function updateBackground(debug, currentDate) {
     var imgTag = $("#bgImg");
     var cloudDiv = $("#cloudDiv");
 
-    var currentTime =  currentDate.getHours();
 
-    if (noon > currentTime && currentTime <= sunset) {
+    var epoch =  epochTime(currentDate.getTime());
+    log("current time in epoch: " +epoch);
 
+   
+
+    var currentTime = epoch;
+
+   //Changes bg image based on time of day 
+   //
+    /*if (noon > currentTime && currentTime <= sunset) {
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
@@ -112,36 +120,37 @@ function updateBackground(debug, currentDate) {
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-        src: './assets/img/74wingold-day.png'
+        src: './assets/img/'+dayAssets[0]
       }));
 
     }
-    if (0 <= currentTime && currentTime < morningStart) {
-      $('#main-banner').prepend($('<img>', {
-        id: 'bgImg',
-        src: './assets/img/74wingold-night.png'
-      }));
-    }
-
     if (sunset <= currentTime && currentTime < dusk) {
 
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-        src: './assets/img/74wingold-day.png'
+        src: './assets/img/'+dayAssets[0]
       }));
 
     }
+    if (midnight <= currentTime && currentTime < morningStart) {
+      $('#main-banner').prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+nightAssets[0]
+      }));
+    }
+
+    
     if (dusk <= currentTime && currentTime <= midnight) {
       $('#main-banner').prepend($('<img>', {
         id: 'bgImg',
-        src: './assets/img/74wingold-night.png'
+        src: './assets/img/'+nightAssets[0]
       }));
     }
-
+*/
 
     //Check what the current time is and change background color.
 
-    if (0 <= currentTime && currentTime < morningStart) {
+    if (midnight <= currentTime && currentTime < morningStart) {
       bodyTag.toggleClass("dawn");
       showStars.addClass("stars");
       cloudDiv.toggleClass("clouds-night");
@@ -178,6 +187,13 @@ function updateBackground(debug, currentDate) {
 }
 
 
+function log(val){
+  console.log(val);
+}
+function epochTime(time){
+   
+   return Math.floor(time/ 1000);
+}
 
 function displayMoonPhase(currentDate) {
 

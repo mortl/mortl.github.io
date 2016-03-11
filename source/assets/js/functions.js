@@ -56,7 +56,7 @@ function updateBackground(debug, currentDate) {
     //Get the nightTwilight object to retreive data on various night hours.
     var nightInfo = times.nightTwilight;
 
-    var morningStart = morningInfo.astronomical.start.getHours();
+    var morningStart = epochTime(morningInfo.astronomical.start.getTime());
     var morningEnd = morningInfo.civil.end.getHours();
 
     var noon =  epochTime(times.transit.getTime());
@@ -90,14 +90,17 @@ function updateBackground(debug, currentDate) {
 
     }
 
-    var dayAssets = ['74wingold-day.png'];
-    var nightAssets = ['74wingold-night.png'];
+    var dayAssets = ['74Wingold-Day-Building.png','74Wingold-Day-Road.png','74Wingold-Day-PlantsRocks.png'];
+    var nightAssets = ['74Wingold-Night-Building.png','74Wingold-Night-Road.png','74Wingold-Night-PlantsRocks.png'];
     var html = "";
     var bodyTag = $("body");
     var showStars = $("#showStars");
     var imgTag = $("#bgImg");
     var cloudDiv = $("#cloudDiv");
 
+    var building = $("#building");
+    var road = $("#road");
+    var plantsRocks = $("#plantsrocks");
 
     var epoch =  epochTime(currentDate.getTime());
     log("current time in epoch: " +epoch);
@@ -108,45 +111,99 @@ function updateBackground(debug, currentDate) {
 
    //Changes bg image based on time of day 
    //
-    /*if (noon > currentTime && currentTime <= sunset) {
+    if (noon > currentTime && currentTime <= sunset) {
 
-      $('#main-banner').prepend($('<img>', {
+      building.prepend($('<img>', {
         id: 'bgImg',
         src: './assets/img/'+dayAssets[0]
       }));
+
+      road.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+dayAssets[1]
+      }));
+
+      plantsRocks.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+dayAssets[2]
+      }));
+
     }
 
     if (noon <= currentTime && currentTime < sunset) {
 
-      $('#main-banner').prepend($('<img>', {
+      building.prepend($('<img>', {
         id: 'bgImg',
         src: './assets/img/'+dayAssets[0]
       }));
+       road.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+dayAssets[1]
+      }));
+      plantsRocks.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+dayAssets[2]
+      }));
+
 
     }
     if (sunset <= currentTime && currentTime < dusk) {
 
-      $('#main-banner').prepend($('<img>', {
+      building.prepend($('<img>', {
         id: 'bgImg',
         src: './assets/img/'+dayAssets[0]
       }));
 
+       road.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+dayAssets[1]
+      }));
+
+       plantsRocks.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+dayAssets[2]
+      }));
+
+
     }
     if (midnight <= currentTime && currentTime < morningStart) {
-      $('#main-banner').prepend($('<img>', {
+
+      building.prepend($('<img>', {
         id: 'bgImg',
         src: './assets/img/'+nightAssets[0]
       }));
+       road.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+nightAssets[1]
+      }));
+
+       plantsRocks.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+nightAssets[2]
+      }));
+
+
+
+
     }
 
     
     if (dusk <= currentTime && currentTime <= midnight) {
-      $('#main-banner').prepend($('<img>', {
+       building.prepend($('<img>', {
         id: 'bgImg',
         src: './assets/img/'+nightAssets[0]
       }));
+       road.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+nightAssets[1]
+      }));
+
+       plantsRocks.prepend($('<img>', {
+        id: 'bgImg',
+        src: './assets/img/'+nightAssets[2]
+      }));
     }
-*/
+
 
     //Check what the current time is and change background color.
 
@@ -156,9 +213,11 @@ function updateBackground(debug, currentDate) {
       cloudDiv.toggleClass("clouds-night");
 
 
+
     }
     if (morningStart <= currentTime && currentTime < noon) {
 
+      
       bodyTag.toggleClass("sunrise");
       cloudDiv.addClass("clouds-day");
     }

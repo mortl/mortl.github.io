@@ -343,6 +343,11 @@ li button {
   text-align: center;
 }
 
+.landscape {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 .container {
   width: 100%;
   text-align: center;

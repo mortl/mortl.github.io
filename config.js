@@ -12,7 +12,7 @@ module.exports = function() {
      * If is set to and empty string the environment will be extract from
      * the NODE_ENV environment var.
      */
-    environment: 'production',
+    environment: 'development',
     // Source code directory.
     source: 'source/',
     // Build directory, is where the compiled code will be output.

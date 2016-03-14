@@ -1,67 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>RTE Testing</title>
-    
     <link rel="stylesheet" href="assets/css/main.css">
 
-  </head>
-  <body>
+    <!-- gravity-wave code-->
+    <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') +
+            '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+    (function() {
+        var headertag = document.createElement('script');
+        headertag.async = true;
+        headertag.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        headertag.src = (useSSL ? 'https:' : 'http:') +
+            '//p.casalemedia.com/ht/gw.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(headertag, node);
+    })();
+    </script>
+    <script type='text/javascript'>
+    googletag.cmd.push(function() {
+        googletag.defineSlot('/62650033/headertag', [970, 250], 'billboard').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+    </script>
 
-      <div id="main-banner">
+    <!--End gravity-wave-->
+</head>
 
+<body>
+    <div id="main-banner">
     </div>
     <div class="pink-main">
-      <h1>
+        <h1>
         The game has changed, <br/>because it  had to. <br/>Together we've levelled the playing field
       </h1>
     </div>
     <div class="wrapper">
-            <br>
-            <br>
-            <br>
-            <div  class="service">
-              <h3>Made for you</h3>
-
-              <p>
+        <br>
+        <br>
+        <br>
+        <div class="service">
+            <h3>Made for you</h3>
+            <p>
                 Works with your existing ad stack config.
-              </p>
-
-            </div>
-
-              <div class="service">
-              <h3>Drive incremental yield</h3>
-              <p>
+            </p>
+        </div>
+        <div class="service">
+            <h3>Drive incremental yield</h3>
+            <p>
                 Let all your partners compete in a latency controlled auction.
-              </p>
-            </div>
-
-            <div  class="service">
-              <h3>Gain new insights</h3>
-              <p>
+            </p>
+        </div>
+        <div class="service">
+            <h3>Gain new insights</h3>
+            <p>
                 Study every bid from every auction for total transparency.
-              </p>
-            </div>
-
-
-
-
+            </p>
+        </div>
     </div>
-
-
-
-
-
     <div id="showStars"></div>
     <div id="cloudDiv"></div>
-
+    <div id='billboard' style='height:250px; width:970px;'>
+    </div>
     <script src="vendors/jquery/dist/jquery.min.js"></script>
-
-
     <script src="assets/js/app.js"></script>
-   
-  </body>
+</body>
 
 </html>

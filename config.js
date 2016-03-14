@@ -61,7 +61,7 @@ module.exports = function() {
       // Entry point for the application
       index: 'index.html',
       // If this option is true, the project will be open in browser after compile.
-      open: false,
+      open: true,
       // Notify on all the browsers when the page updates.
       notify: true
     },

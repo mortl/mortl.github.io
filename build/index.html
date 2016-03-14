@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>RTE Testing</title>
     <link rel="stylesheet" href="assets/css/main.css">
-
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <!-- gravity-wave code-->
     <script type='text/javascript'>
     var googletag = googletag || {};
@@ -39,22 +42,48 @@
         googletag.enableServices();
     });
     </script>
-
     <!--End gravity-wave-->
 </head>
 
 <body>
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">header_tag</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavBar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://api.headertag.com/" target="_blank">Our Tech</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="http://www.headertag.com/whitepaper.pdf" target="_blank">The Whitepaper</a></li>
+                <li><a href="http://wiki.headertag.com/" target="_blank">What's New</a></li>
+                <li><a href="contact-page.html" target="_blank">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     <div id="main-banner">
+        <ul id="scene" class="scene">
+            <li class="layer" data-depth="0.60">
+                <div id="building" class="landscape"></div>
+            </li>
+            <li class="layer" data-depth="1.20">
+                <div id="road" class="landscape"></div>
+            </li>
+            <li class="layer" data-depth="1.00">
+                <div id="plantsrocks" class="landscape"></div>
+            </li>
+        </ul>
     </div>
     <div class="pink-main">
-        <h1>
-        The game has changed, <br/>because it  had to. <br/>Together we've levelled the playing field
+        <h1 class="tagline">
+        Simplifying.<br/>Supercharging.<br/>Levelling the programmatic marketplace, together.
       </h1>
     </div>
     <div class="wrapper">
-        <br>
-        <br>
-        <br>
         <div class="service">
             <h3>Made for you</h3>
             <p>
@@ -76,10 +105,104 @@
     </div>
     <div id="showStars"></div>
     <div id="cloudDiv"></div>
+    <div id="container">
+        <!--Vertical Tab-->
+        <div id="parentVerticalTab">
+            <ul class="resp-tabs-list hor_1" id="features">
+                <li>Vertical 1</li>
+                <li>Vertical 2</li>
+                <li>Vertical 3</li>
+                <li>Vertical 4</li>
+                <li>Vertical 5</li>
+                <li>Vertical 6</li>
+            </ul>
+            <div class="resp-tabs-container hor_1">
+                <div>
+                    Lorem ipsum dolor sit amet, lerisque commodo. Nam porta cursus lectusconsectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales sce. Proin nunc erat, gravida a facilisis quis, ornare id lectus.
+                    <br>
+                    <br>
+                    <p>Tab 1 Container</p>
+                </div>
+                <div>
+                    Lorem consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis.
+                    <br>
+                    <br>
+                    <p>Tab 2 Container</p>
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
+                    <br>
+                    <br>
+                    <p>Tab 3 Container</p>
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
+                    <br>
+                    <br>
+                    <p>Tab 4 Container</p>
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
+                    <br>
+                    <br>
+                    <p>Tab 5 Container</p>
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
+                    <br>
+                    <br>
+                    <p>Tab 6 Container</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br/>
+    </div>
     <div id='billboard' style='height:250px; width:970px;'>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/easyResponsiveTabs.js"></script>
+    <script src="vendors/jquery.parallax.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script>
+    $(function() {
+
+        $('a[href^="#"]').on('click', function(event) {
+
+            var target = $($(this).attr('href'));
+
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+
+        });
+        $("#scene").parallax();
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activetab_bg: '#8F9E8B',
+            inactive_bg: '#5B7876',
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    })
+    </script>
 </body>
 
 </html>
